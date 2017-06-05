@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .title{
+            text-align: center; 
+            border-bottom: solid 1px #ccc;
+            padding-bottom:10px;
+        }
+        div{
+            color: blue;
+        }
+        .important-color{
+            color:yellowgreen !important;
+        }
+        #color1{
+            color:#666;
+        }
+        .color1{
+            width:100px;
+            height:100px;
+            border:solid 1px #ccc;
+            color: red;
+        }
+        .color2{
+            color:green;
+        }
+
+    </style>
+</head>
+<body>
+    <h2 class="title">就近原则</h2>
+    <div class="color1 color2">div元素(选择器优先级相等)</div>
+
+    <div>标签选择器</div>
+
+    <div class="color1">class选择器</div>
+
+    <div class="color1" id="color1">id选择器</div>
+
+    <div class="color1 important-color" id="color1">!importanr</div>
+</body>
+</html>

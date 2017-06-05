@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+			td, th{
+				border:solid 1px #fff !important;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+            <div class="slides">
+                <section>
+                    <h2>前端入门经验分享</h2>
+                    <small>赵赛赛</small>
+                </section>
+            </div>
+            <div class="slides">
+                <section>
+                    <h2>前端三剑客</h2>
+					<ul>
+						<li><span class="fragment highlight-blue">Html(文本标记语言)</span></li>
+						<li><span class="fragment highlight-blue">Css(层叠样式表)</span></li>
+						<li><span class="fragment highlight-blue">Javascript(<span class="fragment highlight-red">Ecmascript</span>+BOM+DOM)</span></li>
+					</ul>
+                </section>
+            </div>
+			<div class="slides">
+				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<h2>HTML(文本标记语言)</h2>
+				</section>
+			</div>
+            <div class="slides">
+                <section>
+                    <h2>Html结构</h2>
+					<ul>
+						<li>
+							页面的基本结构(<a target="_blank" href="./examples/html4.html">html4页面结构</a>/<a target="_blank" href="./examples/html5.html">html5页面结构</a>)
+						</li>
+						<li>
+							 块级元素和行内元素
+							 <ul style="font-size:22px;">
+								 <li>常见的块级元素(block)：div, p, table, ul, ol, li, h1-h6, header, section, article等</li>
+								 <li>常见的行内元素(inline)：span, a, label, input, i, em, strong等</li>
+							 </ul>
+						</li>
+						<li>
+							几条原则
+						</li>
+					</ul>
+                </section>
+            </div>
+			<div class="slides">
+				<section style="font-size:22px;">
+					<table style="border:solid 1px #fff; width:95%;">
+						<thead>
+							<th>元素类型</th>
+							<th>块级元素</th>
+							<th>行内元素</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>特性</td>
+								<td>独占一行，默认情况下，其宽度自动填满其父元素宽度</td>
+								<td>不会独占一行，相邻行内元素会排列在同一行里，直到一行排不下，才会换行，其宽度随元素的内容而变化</td>
+							</tr>
+							<tr>
+								<td>width、height属性</td>
+								<td>可以设置，设置了宽度还是独占一行</td>
+								<td>无效</td>
+							</tr>
+							<tr>
+								<td>margin和padding属性</td>
+								<td>可以设置</td>
+								<td>水平方向的padding-left、padding-right、margin-left、margin-right都产生边距效果，但竖直方向的padding-top、padding-bottom、margin-top、margin-bottom却不会产生边距效果。</td>
+							</tr>
+						</tbody>
+					</table>
+					<div style="font-size:16px; margin-top:10px;"><a href="./examples/inline-block.html" target="_blank">内联元素和块状元素</a></div>
+				</section>
+			</div>
+			<div class="slides">
+				<section>
+					<h2>几条原则</h2>
+					<ul>
+						<li>双标签一定要闭合</li>
+						<li>尽量不要给标签设置属性值，让css进行处理(标签和属性分离)</li>
+						<li>标签语义划</li>
+						<li>注意BFC（块级上下文格式）</li>
+					</ul>
+				</section>
+			</div>
+			<div class="slides">
+				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<h2>CSS(层叠样式表)</h2>
+				</section>
+			</div>
+			<div class="slides">
+				<section>
+					<h3>引入方式</h3>
+					<pre><code class="html"><link rel="stylesheet" href="css样式表的路径" type="text/css"></code></pre>
+
+					<pre><code class="html"><style type="text/css">
+	.header{
+		width:100px;
+		height:30px;
+	}
+</style></code></pre>
+
+					<pre><code class="html"><div class="header" style="width:100px;height:30px;"></div></code></pre>
+				</section>
+			</div>
+			<div class="slides">
+				<section>
+					<h3>选择器</h3>
+					<ul>
+						<li><a href="http://www.w3school.com.cn/cssref/css_selectors.asp" target="_blank">http://www.w3school.com.cn/cssref/css_selectors.asp</a></li>
+					</ul>
+				<pre><code class="html"><style type="text/css">
+	.header{
+		width:100px;
+		height:30px;
+	}
+</style></code></pre>	
+				</section>
+			</div>
+			<div class="slides">
+				<section>
+					<h3>选择器的优先级－－就近原则</h3>
+					<pre><code>!important > inline-styles > id选择器(100) > class选择器(10) > tag选择器(1) > *选择器</code></pre>
+					<div style="font-size:16px; margin-top:10px;"><a href="./examples/selector.html" target="_blank">选择器</a></div>
+				</section>
+			</div>
+			<div class="slides">
+				<section>
+					<h3>盒模型</h3>
+					<p style="font-size:24px;">
+						所有HTML元素可以看作盒子，CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。
+					</p>
+					<ul>
+						<li>
+							W3C标准和模型
+							<pre><code>总宽度= width + margin(左右) + padding(左右) + border(左右)</code></pre>
+						</li>
+						<li>
+							IE盒模型(怪异盒模型)
+							<pre><code>总宽度= width + margin(左右)（即width已经包含了padding和border值）</code></pre>
+						</li>
+					</ul>
+					<div style="font-size:16px; margin-top:10px;"><a href="./examples/box.html" target="_blank">盒子模型</a></div>
+				</section>
+			</div>
+			<div class="slides">
+				<section>
+					<h3>两个概念</h3>
+					<ul style="width:80%;">
+						<li>
+							BFC(块格式化上下文)
+							<pre><code>建立一个隔离的空间，断绝空间内外元素间相互的作用。</code></pre>
+						</li>
+						<li>
+							文档流
+							<pre><code>从头到尾按照文档的顺序，该在什么位置就在什么位置，自上而下，自左到右的顺序</code></pre>
+						</li>
+					</ul>
+				</section>
+			</div>
+			<div class="slides">
+				<section>
+					<h3>浮动(float)</h3>
+					<ul>
+						<li>左浮动
+							<pre style="width:100%;">
+<code>
+div{
+	float:left;
+}
+</code></pre>
+						</li>
+						<li>右浮动
+							<pre style="width:100%;">
+								<code>
+div{
+	float:right;
+}
+</code></pre>
+						</li>
+					</ul>
+					<div style="font-size:16px; margin-top:10px;"><a href="./examples/float.html" target="_blank">float</a></div>
+				</section>
+			</div>
+			<div class="slides">
+				<section>
+					<h3>定位</h3>
+					<ul style="width:80%;font-size:24px;">
+						<li>static,relative,absolute,fixed</li>
+						<li>absolute和fixed会使元素变成块元素</li>
+						<li>absolute的元素的位置相对于最近的已定位(position的值为非static)祖先元素,默认是body。fixed的元素其定位元素永远是body。</li>
+						<li>元素同样会脱离文档流</li>
+					</ul>
+					<div style="font-size:16px; margin-top:10px;"><a href="./examples/position.html" target="_blank">position</a></div>
+				</section>
+			</div>
+			<div class="slides">
+				<section>
+					<ul>
+						<li><a href="http://www.w3school.com.cn/" target="_blank">http://www.w3school.com.cn/</a></li>
+						<li>《css权威指南》，《css那些事儿》, 《css揭秘》</li>
+						<li>《Javascript权威指南》，《Javascript高级语言程序设计》</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
